@@ -1,0 +1,31 @@
+= README
+
+Read https://quarkus.io/guides/kogito[this quarkus guide^].
+
+Start a terminal session.
+
+Clone this project locally and change to its directory:
+
+----
+$ git clone https://github.com/paulojeronimo/kogito-quickstart-with-docker-compose && cd `basename $_`
+----
+
+Use Docker Compose to build the project:
+
+----
+$ docker-compose up
+----
+
+Open another terminal session and
+https://quarkus.io/guides/kogito#testing-the-application[test the
+application] by copying the `curl` commands showed to it.
+
+Sample test:
+
+----
+$ curl -X POST http://localhost:8080/persons \
+    -H 'content-type: application/json' \
+    -H 'accept: application/json' \
+    -d '{"person": {"name":"John Quark", "age": 20}}'
+{"id":"22bc188b-5d96-4630-bd91-083166153bba","person":{"name":"John Quark","age":20,"adult":true}}
+----
